@@ -1,0 +1,40 @@
+https://medium.com/@yesilliali/installing-apache-spark-2-x-to-cloudera-quickstart-wm-dd5314e6d9bd
+
+>java -version 
+1.7.0_67
+
+>sudo yum remove java 
+>sudo yum install java-1.8.0-openjdk
+>export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk.x86_64
+>java -version
+1.8.0_181
+
+download spark latest version 2.3 or 2.6
+unzip the tgz file to /usr/local/spark
+
+change spark_home path in below 3 files to /usr/local/spark
+
+/usr/bin/pyspark
+/usr/bin/spark-shell
+/usr/bin/spark-submit
+
+>spark-submit -> it should point to latest spark version now
+
+
+winscp to cloudera vm:
+
+power off vm
+(If any of below settings are wrong, you cannot connect to vm thru winscp and internet cannot be accessed in vm.)
+
+#right click on clodea-vm-> network 
+
+adapter 1 -> attached to -> NAT
+adapter 2 -> host-only-adapter ,name:vbox-host-only-ethernetadapter#2
+start vm
+>ifconfig
+take eth3: inet address: 192.168.99.100
+and in winscp -> ip address above copied and port: 22 ,username:cloudera,pwd:cloudera.
+
+install scala-2.11 in unix ,add scala bin folder path in PATH variable in bash_profile.
+Now download scala-ide.
+Done

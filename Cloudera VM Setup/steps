@@ -39,4 +39,7 @@ and in winscp -> ip address above copied and port: 22 ,username:cloudera,pwd:clo
 install scala-2.11 in unix (https://www.scala-lang.org/download/) ,add scala bin folder path in PATH variable in bash_profile.
 Now download scala-ide from http://scala-ide.org/download/sdk.html.
 Thas it ..
+
+To start namenode:
+sudo service hadoop-hdfs-namenode start
 Enjoy coding.

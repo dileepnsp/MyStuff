@@ -37,5 +37,6 @@ take eth3: inet address: 192.168.99.100
 and in winscp -> ip address above copied and port: 22 ,username:cloudera,pwd:cloudera.
 
 install scala-2.11 in unix ,add scala bin folder path in PATH variable in bash_profile.
-Now download scala-ide.
-Done
+Now download scala-ide from http://scala-ide.org/download/sdk.html.
+Thas it ..
+Enjoy coding.

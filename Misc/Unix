@@ -1,0 +1,3 @@
+Command to parse log file and group by ,count on few fields.
+>awk -F' ' ' { tot[$1,"|",$4,"|",$7,"|",$10]++ } END { for (i in tot) print tot[i],"|",i } ' < input >output
+-- seperator is space,1st field,4th,7th,10th fields check the counts group by these 4 fields.

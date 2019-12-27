@@ -1,4 +1,5 @@
 #https://medium.com/@yesilliali/installing-apache-spark-2-x-to-cloudera-quickstart-wm-dd5314e6d9bd
+Download oracle vm virtual box manager.
 Download cloudera VMWare from cloudera site https://www.cloudera.com/downloads/quickstart_vms/5-13.html
 
 >java -version 

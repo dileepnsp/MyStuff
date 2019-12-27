@@ -9,7 +9,8 @@ b) If you elected to use VMWare, you would have downloaded and extracted a *.vmx
 These two files combine to help VMWare Workstation or Player open the Quickstart VM. Follow below steps to import .
  i) In Oracle virtual box manager -> machine -> new -> give some name ->use an existing virtual hard disk file -> select vmdk file -> create.
 
-
+-> To open the files in same window in cloudera vm
+Aplications,places, System ->  behaviour -> enable "Always open in browser windows"
 
 >java -version 
 1.7.0_67
@@ -26,11 +27,11 @@ unzip the tgz file to /usr/local/spark
 
 change spark_home path in below 3 files to /usr/local/spark
 
-/usr/bin/pyspark
-/usr/bin/spark-shell
-/usr/bin/spark-submit
+sudo vi /usr/bin/pyspark
+sudo vi /usr/bin/spark-shell
+sudo vi /usr/bin/spark-submit
 
->spark-submit -> it should point to latest spark version now
+>spark-shell  -> it should point to latest spark version now
 
 
 winscp to cloudera vm:
@@ -41,10 +42,10 @@ power off vm
 #right click on clodea-vm-> network 
 
 adapter 1 -> attached to -> NAT
-adapter 2 -> host-only-adapter ,name:vbox-host-only-ethernetadapter#2
+adapter 2 -> check enable network adapter -> host-only-adapter ,name:vbox-host-only-ethernetadapter#2
 start vm
 >ifconfig
-take eth3: inet address: 192.168.99.100
+take eth2: inet address: 192.168.99.100
 and in winscp -> ip address above copied and port: 22 ,username:cloudera,pwd:cloudera.
 
 install scala-2.11 in unix (https://www.scala-lang.org/download/) ,add scala bin folder path in PATH variable in bash_profile.

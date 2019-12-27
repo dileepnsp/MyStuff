@@ -4,8 +4,12 @@ Download cloudera VMWare from cloudera site https://www.cloudera.com/downloads/q
 
 To import downloaded clodera vm in oracle vm virtual box manager:
 
- if you elected to use VirtualBox, you would have downloaded and extracted a *.ovf file from Cloudera. Use the “File -> Import Appliance” menu inside VirtualBox to open your downloaded *.ovf file, or simply double-click on the file itself and VirtualBox should handle it from there.
-If you elected to use VMWare, you would have downloaded and extracted a *.vmx file and a *.vmdk file from Cloudera. These two files combine to help VMWare Workstation or Player open the Quickstart VM
+a) if you elected to use VirtualBox, you would have downloaded and extracted a *.ovf file from Cloudera. Use the “File -> Import Appliance” menu inside VirtualBox to open your downloaded *.ovf file, or simply double-click on the file itself and VirtualBox should handle it from there.
+b) If you elected to use VMWare, you would have downloaded and extracted a *.vmx file and a *.vmdk file from Cloudera. 
+These two files combine to help VMWare Workstation or Player open the Quickstart VM. Follow below steps to import .
+ i) In Oracle virtual box manager -> machine -> new -> give some name ->use an existing virtual hard disk file -> select vmdk file -> create.
+
+
 
 >java -version 
 1.7.0_67

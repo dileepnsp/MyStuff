@@ -1,0 +1,4 @@
+value toDF is not a member of org.apache.spark.rdd.RDD
+ Solution: Move the case class outside of the method(declare before Object starts) and import implicits like below
+    val sqlContext= new org.apache.spark.sql.SQLContext(spark.sparkContext)
+      import sqlContext.implicits._

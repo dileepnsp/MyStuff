@@ -1,7 +1,8 @@
 Install pandas on windows 10 command prompt
 1) download get-pip.py and place in python.exe folder from where python RHEL shell is open.
-2) python get-pip.py (after this copy the content of scripts folder to python.exe folder)
+2) Open the command prompt and go to the folder where get-pip.py is copied and type python get-pip.py (after this copy the content of scripts folder to python.exe folder)
 3) pip -V
+close if any python shell is opened.
 4) python -m pip install pandas
 5) python
 6) import pandas as pd

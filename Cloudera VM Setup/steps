@@ -61,4 +61,6 @@ export HADOOP_ROOT_LOGGER=DEBUG,console
 hive --hiveconf hive.root.logger=DEBUG,console  -e "create table test(i int)"
 hive --hiveconf hive.root.logger=DEBUG, DRFA --hiveconf hive.log.file=/tmp/debug_hive.log
 
+Login to mysql:
+mysql -u root -p cloudera
 Enjoy coding.

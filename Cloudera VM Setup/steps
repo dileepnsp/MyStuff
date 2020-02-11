@@ -10,7 +10,7 @@ These two files combine to help VMWare Workstation or Player open the Quickstart
  i) In Oracle virtual box manager -> machine -> new -> give some name ->use an existing virtual hard disk file -> select vmdk file -> create.
 
 -> To open the files in same window in cloudera vm
-Aplications,places, System ->  behaviour -> enable "Always open in browser windows"
+Aplications,places, System ->  file managment -> behaviour -> enable "Always open in browser windows"
 
 >java -version 
 1.7.0_67
@@ -21,6 +21,8 @@ Aplications,places, System ->  behaviour -> enable "Always open in browser windo
 >export PATH=$JAVA_HOME/bin:$PATH
 >java -version
 1.8.0_181
+
+Add JAVA_HOME and PATH to bash_profile file.
 
 download spark latest version 2.3 or 2.6
 unzip the tgz file to /usr/local/spark

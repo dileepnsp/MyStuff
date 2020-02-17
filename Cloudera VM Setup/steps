@@ -64,5 +64,6 @@ hive --hiveconf hive.root.logger=DEBUG,console  -e "create table test(i int)"
 hive --hiveconf hive.root.logger=DEBUG, DRFA --hiveconf hive.log.file=/tmp/debug_hive.log
 
 Login to mysql:
-mysql -u root -p cloudera
+mysql -u root -p
+enter password: cloudera
 Enjoy coding.

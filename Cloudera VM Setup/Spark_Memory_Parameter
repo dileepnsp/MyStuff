@@ -1,0 +1,44 @@
+#nodes=10
+#cores_per_node=16
+#memory_per_node=64gb
+
+nodes=`cat /home/cloudera/cluster_config.txt | grep 'nodes=' | cut -d'=' -f2`
+cores_per_node=`cat /home/cloudera/cluster_config.txt | grep 'cores_per_node=' | cut -d'=' -f2`
+memory_per_node=`cat /home/cloudera/cluster_config.txt | grep 'memory_per_node=' | cut -d'=' -f2 | rev | cut -c3- | rev`
+
+#One executor leave for driver
+#One core in each node leave for hadoop deomns.
+#Leave 1GB per node to hadoop deomons
+#10% of each executor memory leave for off heap memory(memory overhead).
+
+total_noof_cores=`echo "($cores_per_node - 1)*$nodes" | bc`
+total_noof_executors=`echo "($total_noof_cores/5)-1" | bc `
+noof_executors_per_node=`echo "($total_noof_executors+1)/$nodes" | bc `
+executor_cores=5
+
+executor_memory=`echo "($memory_per_node-1)/$noof_executors_per_node" | bc `
+executor_memory=`echo "$executor_memory*0.90" | bc `
+
+spark.yarn.executor.memoryOverhead=`echo "$executor_memory*0.10" | bc `
+spark.driver.memory=${executor_memory}
+spark.executors.cores=${executor_cores}
+spark.executors.memory=${executor_memory}
+spark.driver.cores=${spark.executors.cores}
+spark.executor.instances=${total_noof_executors}
+spark.default.parallelism=`echo "($spark.executor.instances*$spark.executors.cores*2)" | bc`
+spark.memory.fraction=0.6
+spark.memory.storageFraction=0.5
+#spark.dynamicAllocation.enabled=true
+spark.driver.extraJavaOptions=-XX:+UseG1GC
+spark.memory.storageFraction=0.5
+yarn.nodemanager.vmem-check-enabled=false
+yarn.nodemanager.pmem-check-enabled=false
+no.of.partitions=total_noof_cores*3
+
+echo $total_noof_executors
+echo $executor_cores
+echo $executor_memory
+
+#--num_executors ${total_noof_executors}
+#--executor-cores 5
+#--spark.executors.memory ${executor_memory}

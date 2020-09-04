@@ -1,0 +1,2 @@
+mapreduce.job.user.name=oracle
+HADOOP_USER_NAME=oracle

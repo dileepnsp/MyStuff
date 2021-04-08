@@ -67,3 +67,9 @@ Login to mysql:
 mysql -u root -p
 enter password: cloudera
 Enjoy coding.
+
+#############
+
+Hadoop installation on windows 10
+
+https://towardsdatascience.com/installing-hadoop-3-2-1-single-node-cluster-on-windows-10-ac258dd48aef
